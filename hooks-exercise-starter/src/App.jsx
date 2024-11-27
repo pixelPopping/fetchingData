@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import UserDetail from "./UserDetail";
 
 const App = () => {
   const [userList, setUserList] = useState([]);
