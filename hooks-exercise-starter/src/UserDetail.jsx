@@ -2,14 +2,14 @@
 
 const UserDetail = ({ user }) => {
   if (!user) {
-    return <p>No user selected</p>; // Optionally render a message if no user is selected
+    return null; // If no user is selected, render nothing
   }
 
   return (
     <div>
       <h2>User Profile</h2>
       <p>
-        <strong>Name:</strong> {user.name || "No name provided"}
+        <strong>Name:</strong> {user.name}
       </p>
       {user.age && (
         <p>
@@ -17,7 +17,7 @@ const UserDetail = ({ user }) => {
         </p>
       )}
       <p>
-        <strong>Email:</strong> {user.email || "No email provided"}
+        <strong>Email:</strong> {user.email}
       </p>
       {user.website && (
         <p>
@@ -35,3 +35,5 @@ const UserDetail = ({ user }) => {
     </div>
   );
 };
+
+export default UserDetail;
