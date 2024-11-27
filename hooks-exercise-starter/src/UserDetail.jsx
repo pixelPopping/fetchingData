@@ -1,15 +1,15 @@
-import React from "react";
+// In UserDetail.js
 
 const UserDetail = ({ user }) => {
   if (!user) {
-    return null; // Do not render anything if user is not provided
+    return <p>No user selected</p>; // Optionally render a message if no user is selected
   }
 
   return (
     <div>
       <h2>User Profile</h2>
       <p>
-        <strong>Name:</strong> {user.name}
+        <strong>Name:</strong> {user.name || "No name provided"}
       </p>
       {user.age && (
         <p>
@@ -17,11 +17,14 @@ const UserDetail = ({ user }) => {
         </p>
       )}
       <p>
-        <strong>Email:</strong> {user.email}
+        <strong>Email:</strong> {user.email || "No email provided"}
       </p>
       {user.website && (
         <p>
-          <strong>Website:</strong> <a href={user.website}>{user.website}</a>
+          <strong>Website:</strong>{" "}
+          <a href={user.website} target="_blank" rel="noopener noreferrer">
+            {user.website}
+          </a>
         </p>
       )}
       {user.company && (
@@ -32,5 +35,3 @@ const UserDetail = ({ user }) => {
     </div>
   );
 };
-
-export default UserDetail;
