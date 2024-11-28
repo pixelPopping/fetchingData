@@ -7,7 +7,9 @@ export const UserDetail = ({ user }) => {
     let ignore = false;
     setPosts([]);
     const fetchPost = async () => {
-      const response = await fetch("http://localhost:3000/posts");
+      const response = await fetch(
+        `http://localhost:3000/posts?userId=${user.id}`
+      );
       const data = await response.json();
       if (!ignore) {
         setPosts(data);
